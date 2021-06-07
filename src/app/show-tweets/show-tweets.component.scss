@@ -1,0 +1,89 @@
+@import "./../../styles.scss";
+
+.btn.btn-like {
+    margin-left: 5%;
+    margin-top: 2%;
+    padding-right: 35px;
+    padding-left: 35px;
+}
+
+textarea {
+    border: 1px solid black;
+    opacity: 0.75;
+}
+
+.button-center {
+    margin-top: 2%;
+}
+
+.heart-background {
+    filter: invert(55.2%) sepia(4469%) saturate(5316%) hue-rotate(2476deg) brightness(88%) contrast(119%);
+}
+
+.margin-like {
+    margin-top: 0.5rem;
+}
+
+.button-center:hover {
+    background-color: rgba(143, 143, 146, 0.479);
+}
+.padding-none {
+    padding-left: 0;
+}
+.reply-button {
+    padding-left: 0;
+    img {
+        filter: invert(69%) sepia(287%) saturate(3534%) hue-rotate(183deg) brightness(93%) contrast(80%);
+    }
+}
+
+.btn.btn-like:hover {
+    background-color: rgba(143, 143, 146, 0.479);
+}
+
+.like-reply-partition {
+    margin: 1rem auto 0;
+    width: 85%;
+}
+
+.like-reply-partition-below {
+    margin: 0 auto 1rem;
+    width: 85%;
+}
+
+@media screen and (min-width: 1400px) {
+    .profile-picture {
+        border-radius: 50%;
+        width: 50%;
+        height: 90%;
+    }
+    .btn.btn-like,
+    .button-center {
+        margin-left: 8%;
+    }
+}
+h6 {
+    color: $color-gray;
+    width: 100%;
+    text-align: center;
+    margin: 10px 0 20px;
+    border-bottom: 1px solid;
+    line-height: 0px;
+}
+h6 span {
+    background-color: white;
+    padding: 0 3%;
+}
+.container {
+    padding-left: 17%;
+}
+.profile {
+    text-align: right !important;
+    margin-left: 0;
+    padding-right: 0;
+}
+.profile-picture {
+    border-radius: 50%;
+    width: 70%;
+    height: 80%;
+}

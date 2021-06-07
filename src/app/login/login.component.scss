@@ -1,0 +1,29 @@
+@import './../../styles.scss';
+
+.gray-color {
+    color: #55585a;
+}
+
+.form-control {
+    border: 1px solid #98a1ab;
+}
+.text-muted {
+    color: #98a1ab;
+}
+
+.alignment {
+    text-align: center;
+}
+.image-size {
+    width: 100px;
+    height: 100px
+}
+.card {
+    border: none;
+}
+.reset {
+    font-family: fantasy;text-align: center !important;
+}
+.error-text {
+    border: 1px solid $color-red;
+}

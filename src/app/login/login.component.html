@@ -1,0 +1,34 @@
+<div class="row mt-3" id="login">
+    <div class="col-sm-2 col-md-3"></div>
+    <div class="col-sm-8 col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <img src="./../../assets/twitter logo.png" class="image-size" alt="Twitter logo">
+                <h2><b>Log In with <span class="font-blue">Twitter</span></b></h2>
+                <!-- <h3 class="card-title text-center">&nbsp;<span
+                        class="font-stencil gray-color">Login</span></h3> -->
+                <div *ngIf="invalidCredentials" class="font-red reset">Invalid Credentials</div>
+                <form (ngSubmit)="submit()" [formGroup]="loginForm">
+                    <label class="card-subtitle my-2 text-muted">User Id</label>
+                    <input type="text" class="form-control" formControlName="userId" placeholder="User Id"   [class.error-text]="logIn && (loginForm.controls.userId.invalid)"/>
+                    <div>
+                        <div *ngIf="loginForm.get('userId').errors?.required && logIn" class="font-red">Enter User Id</div>
+                    </div>
+                    <label class="card-subtitle my-2 text-muted">Password</label>
+                    <input type="password" class="form-control" formControlName="password" placeholder="Password"  [class.error-text]="logIn && (loginForm.controls.password.invalid)"/>
+                    <div>
+                        <div *ngIf="loginForm.get('password').errors?.required && logIn" class="font-red">Enter Password</div>
+                    </div>
+                    <div style="text-align: right;"><small><a href="javascript:void(0)"(click)="forgotPassword()" class="font-blue">Forgot Password?</a></small></div>
+                    <div>
+                        <button class="btn btn-primary" type="submit">Login</button>
+                    </div>
+                </form>
+                <div class="row">
+                    <a href="javascript:void(0)" routerLink="/signup" class="font-blue mt-2 text-center">Signup now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-2 col-md-3"></div>
+</div>

@@ -1,0 +1,114 @@
+<div class="row mt-3" id="login">
+    <div class="col-sm-2 col-md-3"></div>
+    <div class="col-sm-8 col-md-6">
+        <div class="card">
+
+            <img src="./../../assets/twitter logo.png" class="size" alt="Twitter logo">
+            <h2><b>Join with us in </b><span class="font-blue">Twitter</span></h2>
+            <div class="card-body">
+                <form (ngSubmit)="submit()" [formGroup]="signupForm">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <label class="card-subtitle my-2 text-muted">First Name</label>
+                            <input type="text" class="form-control" formControlName="firstName" [class.error-text]="submitted && !signupForm.controls.firstName.valid"
+                                placeholder="First Name" />
+                            <div class="font-red"
+                                *ngIf="submitted && signupForm.get('firstName').errors?.required">
+                                <small>First Name required</small>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <label class="card-subtitle my-2 text-muted">Last Name</label>
+                            <input type="text" class="form-control" formControlName="lastName" [class.error-text]="submitted && signupForm.controls.lastName.invalid"
+                                placeholder="Last Name" />
+                            <div class="font-red"
+                                *ngIf="submitted && signupForm.get('lastName').errors?.required">
+                                <small>Last Name required</small>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <label class="card-subtitle my-2 text-muted">Email Id</label>
+                            <input type="text" class="form-control" formControlName="emailId" placeholder="example@example.com" [class.error-text]="submitted && (signupForm.controls.emailId.invalid || emailIdError)" />
+                            <div class="font-red"
+                                *ngIf="submitted && signupForm.get('emailId').errors?.required">
+                                <small>Email Id required</small>
+                            </div>
+                            <div class="font-red"
+                                *ngIf="submitted && !(signupForm.get('emailId').errors?.required) && signupForm.get('emailId').errors?.pattern">
+                                <small>Pattern mismatch</small>
+                            </div>
+                            <div class="font-red" *ngIf="!(!(signupForm.get('emailId').errors?.required) && signupForm.get('emailId').errors?.pattern) && emailIdError">
+                                <small>Email Id Already Exists</small>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <label class="card-subtitle my-2 text-muted">Contact No.</label>
+                            <input type="number" class="form-control" formControlName="contactNumber" placeholder="Contact No"  [class.error-text]="submitted && signupForm.controls.contactNumber.invalid"/>
+                            <div class="font-red"
+                                *ngIf="submitted && signupForm.get('contactNumber').errors?.required">
+                                <small>Contact Number required</small>
+                            </div>
+                            <div class="font-red"
+                                *ngIf="submitted && !(signupForm.get('contactNumber').errors?.required) && signupForm.get('contactNumber').errors?.pattern">
+                                <small>Pattern mismatch</small>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                    <div class="row">
+
+                        <div class="col-sm-12">
+                            <label class="card-subtitle my-2 text-muted">User Id</label>
+                            <input type="text" class="form-control" formControlName="userId" placeholder="User Id"  [class.error-text]="submitted && (signupForm.controls.userId.invalid || userIdError)"/>
+                            <div class="font-red"
+                                *ngIf="submitted && signupForm.get('userId').errors?.required">
+                                <small>User Id required</small>
+                            </div>
+                            <div class="font-red" *ngIf="!(submitted && signupForm.get('userId').errors?.required) && userIdError">
+                                <small>User Id Already Exists</small>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <label class="card-subtitle my-2 text-muted">Password</label>
+                            <input type="password" class="form-control" formControlName="password" placeholder="Password" [class.error-text]="submitted && (passwordError || signupForm.controls.password.invalid)" />
+                            <div class="font-red"
+                                *ngIf="submitted && signupForm.get('password').errors?.required">
+                                <small>Password is required</small>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <label class="card-subtitle my-2 text-muted">Confirm Password</label>
+                            <input type="password" class="form-control" formControlName="confirmPassword" placeholder="Password" [class.error-text]="submitted && (passwordError || signupForm.controls.confirmPassword.invalid)" />
+                            <div class="font-red"
+                                *ngIf="submitted && signupForm.get('confirmPassword').errors?.required">
+                                <small>Password is required</small>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="font-red"
+                                *ngIf="passwordError">
+                                <small>The passwords do not match</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <button class="btn btn-primary mt-4" type="submit">Create Account</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-2 col-md-3"></div>
+</div>

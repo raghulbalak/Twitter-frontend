@@ -1,0 +1,15 @@
+<div>
+    <h3 class="p-2 font-blue">Update/Delete Tweet<button type="button" class="close-button"
+            (click)="dismiss()"><span>&times;</span></button></h3>
+    <hr class="place-hr">
+    <textarea class="form-control" rows="2" [(ngModel)]="modifyTweet"></textarea>
+    <hr class="place-hr">
+    <div class="row mb-2">
+        <div class="col-md-6"></div>
+        <div class="col-6 col-sm-6 col-md-3">
+            <button class="btn btn-primary" (click)="updateTweet()">Update</button></div>
+        <div class="col-6 col-sm-6 col-md-3">
+            <button class="btn btn-primary" (click)="deleteTweet()">Delete</button>
+        </div>
+    </div>
+</div>

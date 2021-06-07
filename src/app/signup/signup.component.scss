@@ -1,0 +1,25 @@
+@import './../../styles.scss';
+
+.gray-color {
+    color: #55585a;
+}
+
+.form-control {
+    border: 1px solid #98a1ab;
+}
+.text-muted {
+    color: #98a1ab;
+}
+
+.size {
+    width: 100px;
+    height: 100px;
+}
+
+.card {
+    border: none;
+}
+
+.error-text {
+    border: 1px solid $color-red;
+}

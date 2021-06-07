@@ -1,0 +1,71 @@
+<h6><span>{{ title }}</span></h6>
+<div *ngFor="let tweet of allTweets; let index = index">
+    <div class="row">
+        <div class="col-2 profile">
+            <img src="./../../assets/twitter logo.png" class="profile-picture" />
+        </div>
+        <div class="col-9 col-sm-9 col-md-10">
+            <div class="d-flex justify-content-between">
+                <b class="font-helvetica">{{ tweet.firstName | titlecase }}&nbsp;{{ tweet.lastName | titlecase
+                    }}</b>
+                <small class="text-muted">{{ tweet.postedTime | timePipe }}</small>
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="container">{{ tweet.tweet }}</div>
+    </div>
+    <div class="row margin-like">
+        <div class="col-2"></div>
+        <div class="col-10 text-muted">
+            <small class="" *ngIf="tweet.likeCount !== 0">{{ tweet.likeCount }} liked this post.</small>
+            <small class="" *ngIf="tweet.likeCount === 0">No likes</small>
+        </div>
+       
+    </div>
+    <hr class="like-reply-partition">
+
+    <div class="row">
+        <div class="col-4 text-center" *ngIf="!tweet.likeStatus">
+            <button class="btn btn-like" (click)="likeTweet(tweet.id, true)">
+                <img src="./../../assets/like.svg" alt="like">&nbsp;Like
+            </button>
+        </div>
+        <div class="col-4 text-center" *ngIf="tweet.likeStatus">
+            <button class="btn btn-like font-red" (click)="likeTweet(tweet.id, false)">
+                <img src="./../../assets/liked.svg" alt="liked" class="heart-background">&nbsp;Liked
+            </button>
+        </div>
+        <div class="col-3">
+            <button class="btn button-center" (click)="comment(index)">
+                <img src="./../../assets/comment .svg" alt="reply">&nbsp;Reply
+            </button>
+        </div>
+        <div class="col-5" *ngIf="emailId === tweet.emailId">
+            <button class="btn button-center" (click)="update(tweet.id)">
+                <img src="./../../assets/update.svg" alt="update">&nbsp;Update/Delete
+            </button>
+        </div>
+    </div>
+    <hr class="like-reply-partition-below">
+    <div class="row mb-2" *ngFor="let replies of tweet.reply;">
+        <div class="col-1"></div>
+        <div class="col-8">
+            <div class="text-muted">@{{ replies.userId }} replied</div>
+            <div class="">{{ replies.reply }}</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-1 col-sm-1"></div>
+        <div class="col-9 col-sm-8">
+            <textarea placeholder="Enter your reply" rows="1" class="form-control" #reply [id]="index"
+                ></textarea>
+        </div>
+        <div class="col-2 padding-none">
+            <button class="btn reply-button" (click)="replyTweet(tweet.id, reply.value)"><img
+                    src="./../../assets/1x/outline_send_black_24dp.png"></button>
+        </div>
+    </div>
+    <hr>
+</div>

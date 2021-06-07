@@ -1,0 +1,51 @@
+@import './../../styles.scss';
+
+.twitter-image {
+    background-image: url('./../../assets/twitter.jpg');
+    background-size: 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.heading {
+    background-color: white;
+    height: 400px;
+    bottom: 0;
+    font-family: Copperplate;
+    padding-top: 4%;
+}
+img {
+    width: 100px;
+    height: 100px;
+}
+
+.signup {
+    border-color: $color-blue;
+    border-radius: 70px;
+    height: 35px;
+    padding: 1% 15%;
+    margin-top: 3%;
+    width: 100%;
+    font-family: Stencil Std, fantasy;
+    background-color: $color-white;
+    font-weight: 200;
+    color: $color-blue;
+}
+
+@media screen and (max-width:767px) {
+    .height-image {
+        background-image: url('./../../assets/twitter.jpg');
+        background-size: 100%;
+        background-position: 50% 50%;
+        background-repeat:repeat-x;
+        background-size: cover;
+        height: 200px;
+    }
+    .test {
+        background-color: white;
+        height: 200px;
+        font-family: Stencil Std, fantasy;
+        bottom: 0;
+    }
+}
