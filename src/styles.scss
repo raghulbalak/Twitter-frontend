@@ -1,0 +1,48 @@
+/* You can add global styles to this file, and also import other style files */
+/* Importing Bootstrap SCSS file. */
+// @import '~bootstrap/scss/bootstrap';
+
+$color-blue: #3499fe;
+$color-white: #ffffff;
+$color-green: #5fc446;
+$color-red: #a84242;
+$color-gray: #9c9e8a;
+
+.font-blue {
+    color: #3499fe;
+}
+
+.font-helvetica {
+    font-family: Helvetica;
+}
+.font-red {
+    color: #ce3b7e;
+}
+
+.theme {
+    background-color: $color-blue;
+}
+
+.font-stencil {
+    font-family: Stencil Std, fantasy;
+}
+
+.font-green {
+    color: $color-green;
+}
+
+.font-red {
+    color: $color-red;
+}
+
+.btn.btn-primary {
+    border-radius: 70px;
+    height: 35px;
+    padding: 1% 15%;
+    margin-top: 1%;
+    width: 100%;
+    font-weight: 400;
+    font-family: Stencil Std, fantasy;
+    border-color: $color-blue;
+    background-color: $color-blue;
+}

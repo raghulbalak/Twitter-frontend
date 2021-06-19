@@ -1,0 +1,25 @@
+@import './../../styles.scss';
+
+.ml-auto {
+    margin: 0 0 0 auto !important;
+}
+
+.background-blue {
+    color: $color-white;
+    background-color: $color-blue;
+    a, button {
+        color: $color-white;
+
+    }
+}
+
+.nav-link {
+    font-weight: 900;
+}
+
+.navbar-brand {
+    margin-left: 1%;
+    font-family: Times New Roman;
+    font-weight: 900;
+    font-size: 1.8rem;
+}
