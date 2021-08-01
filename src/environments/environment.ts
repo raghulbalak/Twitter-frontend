@@ -6,7 +6,10 @@ export const environment = {
   production: false
 };
 
-export const baseUrl = `http://localhost:8090/api/v1.0/tweets`;
+export const baseUrl = `http://tweetappbackend-env.eba-3v6zywbt.us-east-2.elasticbeanstalk.com/api/v1.0/tweets`;
+
+// export const baseUrl = `http://localhost:5000/api/v1.0/tweets`;
+
 
 /*
  * For easier debugging in development mode, you can import the following file

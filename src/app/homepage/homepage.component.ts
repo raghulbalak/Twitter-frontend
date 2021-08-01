@@ -19,7 +19,9 @@ export class HomepageComponent implements OnInit {
     this.tweetsService.getAllTweets().subscribe((response: any) => {
       this.allTweets = response.allTweets;
       this.allTweets.reverse();
-      console.log(this.allTweets);
+      this.allTweets.sort(function(a: any, b: any) {
+        return b.id - a.id;
+      });
     })
   }
 

@@ -17,6 +17,7 @@ import { AllUsersComponent } from './all-users/all-users.component';
 import { ShowTweetsComponent } from './show-tweets/show-tweets.component';
 import { MyTweetsComponent } from './my-tweets/my-tweets.component';
 import { UpdateDeleteTweetComponent } from './update-delete-tweet/update-delete-tweet.component';
+import { NgIdleKeepaliveModule } from '@ng-idle/keepalive';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { UpdateDeleteTweetComponent } from './update-delete-tweet/update-delete-
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    NgIdleKeepaliveModule.forRoot(),
     NgbModule
   ],
   providers: [],

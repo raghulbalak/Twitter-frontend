@@ -22,7 +22,6 @@ export class TimePipe implements PipeTransform {
     } else { // sent more than one day ago
       result = 'posted ' + Math.floor(delta / 86400) + ' days';
     }
-    console.log(value);
     return result;
   }
 

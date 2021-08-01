@@ -30,7 +30,6 @@ export class ShowTweetsComponent implements OnInit, OnDestroy {
   likeTweet(tweetId: any, status: any) {
     this.tweetsService.likeTweet(tweetId, status).subscribe((response) => {
       this.reloadPage.emit(true);
-      console.log(response);
     },
       (error) => { console.log(error); });
   }
@@ -55,17 +54,12 @@ export class ShowTweetsComponent implements OnInit, OnDestroy {
     const changeTweet = this.allTweets.find((tweet: any) => {
       return tweet.id === tweetId;
     }).tweet;
-    console.log(changeTweet.tweet);
     this.modalReference.componentInstance.tweet = changeTweet;
     this.modalReference.result.then((result) => {
       if (result.action === 'update') {
         this.updateTweet(tweetId, result.value);
-        console.log("------");
       } else if (result.action === 'delete') {
         this.deleteTweet(tweetId);
-        console.log("delete tweet init");
-      } else {
-        console.log("test");
       }
     },
       (error) => {
@@ -75,7 +69,6 @@ export class ShowTweetsComponent implements OnInit, OnDestroy {
 
   updateTweet(tweetId: any, tweet: any) {
     this.tweetsService.updateTweet(tweetId, tweet).subscribe((response: any) => {
-      console.log(response);
       this.reloadPage.emit(true);
     },
       (error) => {
@@ -86,7 +79,6 @@ export class ShowTweetsComponent implements OnInit, OnDestroy {
 
   deleteTweet(tweetId: any) {
     this.tweetsService.deleteTweet(tweetId).subscribe((response: any) => {
-      console.log(response);
       this.reloadPage.emit(true);
     },
       (error) => {

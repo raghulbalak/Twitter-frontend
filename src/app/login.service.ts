@@ -2,7 +2,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { baseUrl } from 'src/environments/environment';
-import { SignupComponent } from './signup/signup.component';
 
 
 @Injectable({
@@ -12,6 +11,7 @@ export class LoginService {
   headers = new HttpHeaders().set('Content-Type', 'application/json');
   private loggedIn = new BehaviorSubject<Boolean>(false);
   $loggedIn = this.loggedIn.asObservable();
+  public modalOpened = false;
 
   constructor(private _http: HttpClient) { }
 
@@ -20,7 +20,7 @@ export class LoginService {
     return this._http.post(url, loginForm);
   }
 
-  public forgotPassword(userId: any,password: any) {
+  public forgotPassword(userId: any, password: any) {
     const url = baseUrl + '/' + userId + '/forgot';
     return this._http.put(url, JSON.stringify(password), { headers: this.headers });
   }
@@ -55,4 +55,5 @@ export class LoginService {
     }
     return this.$loggedIn;
   }
+
 }

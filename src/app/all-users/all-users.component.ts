@@ -18,14 +18,12 @@ export class AllUsersComponent implements OnInit {
       if(response.error === null) {
       this.users = response.users;
       document.getElementById('allUsers')?.focus();
-      console.log(response);
       } else {
         this.errorMessage = response.error;
       }
     },
     (error) => {
       this.errorMessage = error;
-      console.log(error);
     })
   }
 

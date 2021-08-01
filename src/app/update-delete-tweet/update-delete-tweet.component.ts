@@ -14,7 +14,6 @@ export class UpdateDeleteTweetComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.tweet);
     this.modifyTweet = this.tweet;
   }
 

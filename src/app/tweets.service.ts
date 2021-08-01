@@ -11,13 +11,10 @@ export class TweetsService {
 
   public getAllTweets() {
     const urlActual = baseUrl + '/all' + '/' + this.userId;
-    console.log(urlActual);
-    // const url = 'http://localhost:8090/api/v1.0/tweets/all/test1';
     return this._http.get(urlActual);
   }
 
   public postTweet(userTweet: any) {
-    console.log(userTweet);
     const url = baseUrl + '/' + this.userId + '/add';
     return this._http.post(url, userTweet);
   }
@@ -44,8 +41,6 @@ export class TweetsService {
   }
 
   public updateTweet(tweetId: any, tweet: any) {
-    console.log(tweet);
-    console.log(tweetId);
     const url = baseUrl + '/' + this.userId + '/update/' + tweetId;
     return this._http.put(url, tweet);
   }

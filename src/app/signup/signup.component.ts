@@ -31,30 +31,25 @@ export class SignupComponent implements OnInit {
 
   submit() {
     this.submitted = true;
-    console.log(this.submitted);
     this.passwordError = this.passwordCheck;
     this.emailIdError = false;
     this.userIdError = false;
-    console.log(this.passwordError);
     if (this.signupForm.valid && !this.passwordError) {
       this.confirmPasswordSwitch(false);
       this.loginService.register(this.signupForm.value).subscribe((response: any) => {
-        console.log(response);
         this.confirmPasswordSwitch(true);
         if(response.errorMessage && response.errorMessage.errorCode === 101) {
           this.emailIdError = true;
         } else if(response.errorMessage && response.errorMessage.errorCode === 102) {
           this.userIdError = true;
-        } else if (response.errorMessage && response.errorMessage.errorcode === 103) {
+        } else if (response.errorMessage && response.errorMessage.errorCode === 103) {
           this.emailIdError = true;
           this.userIdError = true;
         } else {
           this._router.navigate(['/login']);
-          console.log(response);
         }
       }, (error) => {
         this.confirmPasswordSwitch(true);
-        console.log(error);
       })
     }
   }
@@ -74,10 +69,6 @@ export class SignupComponent implements OnInit {
       this.signupForm.controls.confirmPassword.disable();
       this.signupForm.controls.confirmPassword.updateValueAndValidity();
     }
-  }
-
-  print() {
-    console.log(this.signupForm.controls.emailId);
   }
 
 }

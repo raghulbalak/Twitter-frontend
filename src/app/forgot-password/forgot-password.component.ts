@@ -25,9 +25,7 @@ export class ForgotPasswordComponent implements OnInit {
   }
 
   userIdValidation() {
-    console.log(this.forgotPasswordForm.controls.userId);
     this.loginService.getUser(this.forgotPasswordForm.controls.userId.value).subscribe((response: any) => {
-      console.log(response);
       this.userStatus = response.status;
       this.userPassword = response.status;
       if(this.userPassword) {
@@ -38,7 +36,6 @@ export class ForgotPasswordComponent implements OnInit {
       }
     },
     (error) => {
-      console.log(error);
     })
   }
 
